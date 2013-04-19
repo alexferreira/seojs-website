@@ -1,0 +1,7 @@
+{
+  "modules": "cjs",
+  "namespace": "App",
+  "appDir": ".",
+  "template": "bootstrap"
+}
+
