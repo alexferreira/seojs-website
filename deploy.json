@@ -1,0 +1,28 @@
+{
+  "name": "demo",
+  "repository": {
+    "url": "git://github.com/alexferreira/ajax-seo-demo.git",
+    "type": "git"
+  },
+  "config": {
+    "commands": {
+      "monitor": "tail -f *.log"
+    },
+    "targets": {
+      "production": {
+        "ssh": {
+          "user": "ajaxSeo",
+          "port": 22,
+          "hosts": [
+            "177.70.18.250"
+          ]
+        },
+        "env": {
+          "HOST": "0.0.0.0",
+          "PORT": 80,
+          "NODE_ENV": "production"
+        }
+      }
+    }
+  }
+}
