@@ -20,3 +20,16 @@ body {
   margin: 0 auto;
   display: block;
 }
+
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto !important;
+}
+.CodeMirror-scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.brand{
+  padding: 5px 20px !important;
+}
