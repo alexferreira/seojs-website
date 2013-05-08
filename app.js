@@ -14,6 +14,8 @@ var app = module.exports = express();
 
 var server = http.createServer(app);
 
+var sightmap = require('sightmap');
+
 // Configuration
 
 app.configure(function () {
@@ -25,7 +27,7 @@ app.configure(function () {
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
-    app.use(express.static(__dirname + '/public'));
+    app.use(express.static(__dirname + '/ember'));
 });
 
 app.configure('development', function () {
@@ -38,7 +40,7 @@ app.configure('production', function () {
 
 // index
 app.get('/', function(req, res){
-  res.render('index', { title: 'Ajax-Seo: Demo' })
+  res.render('index', { title: 'SeoJs: Demo' })
 });
 
 app.get('/todos', function (req, res) {
@@ -82,6 +84,24 @@ app.delete('/todos/:id', function (req, res) {
             res.send(404)
         }
     })
+});
+
+
+app.get('/sitemap.xml', function (req, res) {
+    sightmap([
+        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/'},
+        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajuste'},
+        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/browser_e_buscadores_o_que_veem'},
+        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/google_e_bing'},
+        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/o_que_e'},
+        // {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/o_que_e'},
+        // {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/como_funciona'},
+        // {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/beneficios'},
+        // {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/maleficios'},
+    ]);
+    
+    res.setHeader('Content-Type', 'text/xml');
+    res.send(sightmap());
 });
 
 server.listen(3000, function () {
