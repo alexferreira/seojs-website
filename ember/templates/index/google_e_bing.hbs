@@ -1,0 +1,41 @@
+<h2>Google e Bing</h2>
+
+<p>Google e Bing ambos utilizam hashbang na URL, é utilizado para informar o motor de busca que a página atual que está sendo acessado na URL contém conteúdo AJAX. Abaixo está um exemplo de um site que contém um hashbang dentro de uma URL:</p>
+
+<p><span class="badge badge-inverse"  data-toggle="tooltip" title="URL: Bonita">http://yourwebsite.com/#!/some/page/with/ajax/content</span></p>
+
+<p>Google agora irá converter esta URL para uma URL especial que foi projetada para ser acessível pelo crawler. O Google irá visitar a URL especial e espera que o conteúdo recuperado seja o conteúdo final.</p>
+
+<p>Em outras palavras, o Google espera ver o mesmo HTML que seria obtido caso a URL fosse acessada pelo browser. Aqui está a URL especial que as consultas do Google / Bing acessam para obter esse conteúdo:</p>
+
+<p><span class="badge badge-inverse"  data-toggle="tooltip" title="URL: Feia">http://yourwebsite.com/?_escaped_fragment_=/some/page/with/ajax/content</span></p>
+
+<p>Então, agora cabe a você para encaminhar esta solicitação para a versão HTML pré-gerada da sua página web.</p>
+
+<p>O principal problema de rastreamento AJAX é que ele depende fortemente de JavaScript, além disso, diferentes navegadores suportam diferentes recursos e funções a execução de JavaScript requer recursos adicionais e isso aumenta os custos para os mecanismos de busca.</p>
+
+<p>Uma possível solução para este problema seria, se os <strong>Crawlers executassem todos javascript da web</strong> o que torna inviável pois:</p>
+<ul>
+  <li>Isto é caro e demorado</li>
+  <li>Apenas os principais motores de busca seriam capazes de fazer isso, e provavelmente apenas parcialmente</li>
+  <li>Indexar seria mais demorado, resultando em piores resultados de pesquisa</li>
+</ul>
+
+<p>Historicamente, as aplicações AJAX têm sido inviáveis para os motores de busca porque o conteúdo AJAX é produzido dinamicamente do lado do cliente pelo navegador e, portanto, não é visível para os indexadores.</p> 
+
+<p>Embora existam métodos para lidar com este problema, eles envolvem a manutenção manual regular para manter o conteúdo up-to-date.</p>
+
+<p>Pensando nisso foi criado o <a href="#" data-toggle="tooltip" title="Aplicação que facilita a indexação de sites ricos">SeoJs</a> que executa seu javascript em tempo de rastreamento e do lado servidor</p>
+
+<p>Parece um pouco complicado mas o <strong>SeoJs</strong> permite exatamente isso: ele permite que o servidor web possa entregar aos mecanismos de busca um HTML criado a partir de pedaços de conteúdo estático, bem como pela execução de JavaScript para as páginas do aplicativo, com isso:</p>
+
+<ul>
+  <li>Evitamos os problemas acima</li>
+  <li>Dámos maior controle para os desenvolvedores</li>
+  <li>Isso é feito automaticamente</li>
+  <li>Manutenção contínua inexistente</li>
+</ul>
+
+<p>A compreensão de como fazer uma aplicação rica e indexável pelo Google e Bing praticamente elimina toda e qualquer razão para não usar JavaScript para praticamente qualquer aplicação web.</p> 
+
+<p>Antes a maior preocupação era o HTML, mas agora com a SeoJS tornando sua aplicação AJAX indexável, você pode fazer praticamente qualquer coisa :)</p>

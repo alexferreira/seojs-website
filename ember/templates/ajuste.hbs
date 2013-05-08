@@ -1,13 +1,43 @@
-<h2>Um ajuste entre o buscador e o servidor</h2>
+<h2>O acordo entre o buscador e o servidor</h2>
 
-<p>A fim de tornar suas aplicações AJAX rastreáveis​​, o seu site precisa obedecer a um novo acordo. Este ajuste baseia-se no seguinte:</p>
+
+<strong>Com o objetivo de indexar aplicações ricas, surgem algumas perguntas:</strong>
+
+<ul>
+  <li>Quais URL ajax podem ser indexadas?</li>
+  <li>Como exibir a URL?</li>
+  <li>Como poderia funcionár a logística</li>
+</ul>
+
+<p>Pensando nisso teriamos o seguinte acordo entre o web server e os motores de busca.</p>
+
+<p><strong>Web server concorda com</strong></p>
+<ul>
+  <li>Indicar quais URLs serão indexáveis</li>
+  <li>Executar javascript para urls feia (sem user agent sniffing)</li>
+  <li>não encobrir por sempre dando mesmo conteúdo para o navegador e rastreador, independentemente do pedido (ou risco eliminatin, como antes)</li>
+</ul>
+
+
+<p><strong>Os motores de busca concordam com</strong></p>
+<ul>
+  <li>Descobrir urls como antes (sitemaps, hyperlinks)</li>
+  <li>Modificar urls bonitas para urls feias</li>
+  <li>Indexar conteúdo</li>
+  <li>Exibir URLs originais</li>
+</ul>
+
+
+<p>A fim de tornar suas aplicações AJAX rastreáveis​​, o seu site precisa obedecer algumas regras que baseia-se no seguinte:</p>
 
 <ol>
   <li>O site adota o esquema de rastreamento de AJAX.</li>
-  <li>Para cada URL que tem conteúdo produzido dinamicamente, o servidor fornece um snapshot do HTML, que é o conteúdo que o usuário vê em seu navegador. Muitas vezes, tais URLs serão URLs AJAX, ou seja, URLs contendo um fragmento de hash, por exemplo www.seusite.com.br/index.html#contato, onde #contato é o fragmento hash. O snapshot de HTML é todo o conteúdo que aparece na página após a JavaScript ter sido executado.</li>
-  <li>O motor de busca irá indexar o snapshot de HTML e servirá suas URLs AJAX originais nos resultados de busca.</li>
+  <li>Para cada URL que tem conteúdo produzido dinamicamente, o servidor fornece um HTML pré-gerado, que é o conteúdo que o usuário vê em seu navegador. Muitas vezes, tais URLs serão URLs AJAX, ou seja, URLs contendo um fragmento de hash, por exemplo www.seusite.com.br/index.html#contato, onde #contato é o fragmento hash. O HTML pré-gerado é todo o conteúdo que aparece na página após a JavaScript ter sido executado.</li>
+  <li>O motor de busca irá indexar o  HTML pré-gerado e servirá suas URLs AJAX originais nos resultados de busca.</li>
 </ol>
 
-<p>A fim de fazer este trabalho, o aplicativo deve usar uma sintaxe específica na URLs AJAX (vamos chamá-los de "URLs bonita"). O mecanismo de busca vai modificar temporariamente a "URLs bonita" em "URLs feia" e pedirá esta a seu servidor. Este pedido de uma "URL feia" indica ao servidor que ele não deve retornar a página web regular, daria para um navegador, mas sim um instantâneo HTML. Quando o rastreador obteve o conteúdo de uma "URL feia", ele indexa seu conteúdo, em seguida, exibe a URL original nos resultados da pesquisa. Em outras palavras, os usuários finais vão sempre ver o URL bonita contendo um fragmento hash. O diagrama a seguir resume o acordo:</p>
+<p>A fim de fazer este trabalho, o aplicativo deve usar uma sintaxe específica na URLs AJAX (vamos chamá-los de "URLs bonita"). O mecanismo de busca vai modificar temporariamente a "URLs bonita" em "URLs feia" que será solicitada ao seu servidor. Este pedido de uma "URL feia" indica ao servidor que ele não deve retornar a página web que daria para um navegador, mas sim um HTML pré-gerado.</p>
 
-<img src="/images/funcionamento_ajax_seo.png" class="blockCenter">
+<p>Quando o rastreador obtiver o conteúdo de uma "URL feia", ele indexa seu conteúdo, em seguida, exibe a URL original nos resultados da pesquisa. Em outras palavras, os usuários finais vão sempre ver o URL bonita contendo um fragmento hash. O diagrama a seguir resume o acordo:</p>
+
+<img src="assets/funcionamento_seo_js.png" class="blockCenter">

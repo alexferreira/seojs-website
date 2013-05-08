@@ -1,0 +1,81 @@
+<ul class="breadcrumb">
+  <li>{{#linkTo "index"}}Home{{/linkTo}} <span class="divider">/</span></li>
+  <li class="active">Browser e Buscadores, o que vêem?</li>
+</ul>
+
+<h2>Browser e Buscadores, o que vêem?</h2>
+
+<p>Nos últimos anos, mais e mais a web se tornou preenchida com aplicações ricas em javascript, substituindo páginas HTML estáticas. Isso foi um grande grande passo no desenvolvimento para os usuários, pois torna as aplicações muito mais rápidas e mais ricas.</p>
+
+<p>Mas fazer sua aplicação mais ágil veio com um custo enorme: crawlers não são capazes de ver todo o conteúdo que é criado dinamicamente. Como resultado, as aplicações mais modernas são também aquelas que muitas vezes são as menos indexadas pelos mecanismos de busca. Por exemplo, uma aplicação típica AJAX pode resultar no seguinte HTML a ser visto pelo rastreador:</p>
+
+{{#code}}
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>SeoJs: Demo</title>
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+      <meta name="fragment" content="!" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/assets/application.min.css">
+    </head>
+    <body>
+      <script type="text/javascript" src="/assets/application.min.js"></script>
+    </body>
+  </html>
+{{/code}}
+
+<p>Mas imagine que o que o usuário realmente vê no navegador é muito conteúdo relacionado a filmes e informações sobre eles. Como isso acontece? O navegador executa os application.min.js e cria o HTML que o usuário vê, por exemplo, algo como isto:</p>
+
+
+{{#code}}
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>SeoJs: Demo</title>
+      <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+      <meta name="fragment" content="!">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="/assets/application.min.css">
+    </head>
+    <body class="ember-application">
+      <script type="text/javascript" src="/assets/application.min.js"></script>
+
+      <div id="ember344" class="ember-view">
+        <div class="navbar navbar-fixed-top">
+          <div class="navbar-inner">
+            <div class="container">
+              <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a id="ember373" class="ember-view brand active" href="#!/">SeoJs Demo</a>
+              <div class="nav-collapse collapse">
+                <ul class="nav">
+                  <li class="active"><a id="ember374" class="ember-view active" href="#!/">Home</a></li>
+                  <li><a id="ember375" class="ember-view" href="#!/ajuste">Ajuste</a></li>
+                  <li><a id="ember378" class="ember-view" href="#!/sobre">Sobre</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
+{{/code}}
+
+<p>O navendor pode executar JavaScript e produzir conteúdo on the fly, os buscadores não. Para fazer com que o buscador veja o que o usuário vê, o servidor precisará entregar um HTML pré-gerado com o resultado da execução do JavaScript em sua página.</p>
+
+
+<h2>Curiosidade</h2>
+
+<p>Se tiver curiosidade sobre a sua própria aplicação, vá em seu navegador, em seguida, visualize o código fonte (por exemplo, no Chrome, clique com botão direito e selecione "View Page Source"). No nosso exemplo, "View Page Source" não contêm a palavra "Ajuste". Da mesma forma, se seu conteúdo for criado dinamicamente, o código fonte da página não vai incluir o conteúdo que você deseja que os mecanismos de busca veja. Em outras palavras "View Page Source" é exatamente o que o buscador vê.</p>
+
+
+<h2>Por que isso é importante?</h2> 
+
+<p>É importante porque os resultados da pesquisa são baseados em parte nas palavras que o buscador encontra na página. Se o buscador não consegue encontrar o seu conteúdo, seu site não é indexável.</p>
+
+
