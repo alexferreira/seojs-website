@@ -1,3 +1,3 @@
-require('./run_prettify');
+Ember.LOG_VERSION = false
 module.exports = Ember.Application.create();
 
