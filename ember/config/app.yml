@@ -20,7 +20,6 @@ vendor:
   - bootstrap
   - i18n
   - codemirror
-  - runmode
   - xml
   - javascript
   - css
