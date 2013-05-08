@@ -6,7 +6,7 @@ module.exports = function(grunt) {
         banner: '/*! application.js <%= grunt.template.today("yyyy-mm-dd hh:MM") %> */\n',
       },
       build: {
-        src: 'ember/javascripts/application.js',
+        src: 'ember/assets/application.js',
         dest: 'public/assets/application.min.js'
       }
     },
@@ -15,10 +15,7 @@ module.exports = function(grunt) {
       dist: {
         files: {
           'public/assets/application.min.css': [
-            'ember/stylesheets/bootstrap.css',
-            'ember/stylesheets/bootstrap-responsive.css',
-            'ember/stylesheets/prettify.css',
-            'ember/stylesheets/app.css',
+            'ember/assets/application.css',
           ]
         },
         options: {
@@ -30,7 +27,7 @@ module.exports = function(grunt) {
 
     watch: {
       application: {
-        files: ['ember/javascripts/application.js'],
+        files: ['ember/assets/application.js', 'ember/assets/application.css'],
         tasks: ['compress']
       }
     }
