@@ -1,0 +1,10 @@
+pt-BR:
+  locales:
+    en: English
+    pt-BR: Portugues
+  select_locale: Selecione o idioma
+  app_name: Polyglottous Emberjs
+  name: nome
+  menu:
+    dashboard: Painel
+    about: Sobre
