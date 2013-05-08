@@ -1,0 +1,27 @@
+app:
+  appDir: .
+  namespace: App
+  template: bootstrap
+css:
+  - bootstrap
+  - bootstrap-responsive
+  - codemirror
+  - blackboard
+  - elegant
+  - app
+vendor:
+  - jquery
+  - handlebars
+  - underscore
+  - ember
+  - ember-data
+  - ember-validations
+  - ember-easyform
+  - bootstrap
+  - i18n
+  - codemirror
+  - runmode
+  - xml
+  - javascript
+  - css
+  - htmlmixed
