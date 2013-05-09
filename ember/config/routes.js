@@ -20,6 +20,34 @@ App.Router.map(function() {
   
 });
 
+Ember.Route.reopen({
+  enter: function(router) { 
+    this._super(router);
+
+    title = this.pageTitle;
+    objMeta = this.pageMeta;
+
+    if (title) {
+      capitalizedTitle = title.charAt(0).toUpperCase() + title.slice(1)
+      jQuery(document).attr('title', "SeoJs :: " + capitalizedTitle);
+    } else {
+      jQuery(document).attr('title', "SeoJs");
+    }
+
+    if (objMeta) {
+      for(var key in objMeta) {
+        value = objMeta[key];
+        tag = jQuery('meta[name='+key+']')
+        if(tag.exist()){
+          tag.attr('content', value);
+        } else {
+          jQuery('head').append('<meta name="'+key+'" content="'+value+'"/>');
+        } 
+      }
+    }
+  }
+});
+
 (function() {
 
 var get = Ember.get, set = Ember.set;
