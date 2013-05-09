@@ -5,7 +5,8 @@
   , "dependencies": {
     "express": "3.x",
     "mongoose": "3.6.5",
-    "ejs": "0.8.3"
+    "ejs": "0.8.3",
+    "sightmap": "0.0.1"
   },
   "devDependencies": {
     "grunt": "~0.4.0",
