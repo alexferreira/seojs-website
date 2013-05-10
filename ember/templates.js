@@ -272,6 +272,12 @@ function program5(depth0,data) {
   data.buffer.push("Google e Bing");
   }
 
+function program7(depth0,data) {
+  
+  
+  data.buffer.push("Ajuste");
+  }
+
   data.buffer.push("<ul class=\"breadcrumb\">\n  <li class=\"active\">Home</li>\n</ul>\n\n<h1>SeoJs: Indexando Aplicações Ricas</h1>\n\n<img src=\"assets/seoJs-logo.png\" class=\"blockCenter\">\n</br>\n</br>\n<p>Buscando uma melhor experiência do usuário muitos desenvolvedores têm procurado os recursos necessários no AJAX, devido o javascript ser executado no lado do cliente, sua implementação tem acarretado diversos problemas de indexação.</p>\n\n<strong>por que esse problema precisa ser resolvido?</strong>\n<ul>\n  <li>Desde o surgimento da web 2.0: mais e mais conteúdos são criados dinamicamente (~ 69%)</li>\n  <li>Desenvolvedores são desencorajados a criação de aplicativos dinâmicos</li>\n  <li>O progresso da Web é impedido por falta de solução de indexação de sites dinâmicos.</li>\n</ul>\n\n\nMas antes de chegar à solução precisamos entender rapidamente o que é o AJAX, como ele funciona e quais os benefícios e malefícios que sua implementação pode acarretar.</p>\n\nAntes de chegarmos a solução precisamos entender algumas coisas:\n\n<ul>\n  <li>");
   hashTypes = {};
   options = {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],hashTypes:hashTypes,data:data};
@@ -288,8 +294,11 @@ function program5(depth0,data) {
   stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "index.google_e_bing", options) : helperMissing.call(depth0, "linkTo", "index.google_e_bing", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("</li>\n  <li>");
-  data.buffer.push("Ajuste");
-  data.buffer.push("</li>\n</ul>\n\n<a href=\"#\" class=\"btn btn-large btn-danger\" data-toggle=\"popover\" title=\"sssssssssssss\" data-content=\"And here's some amazing content. It's very engaging. right?\" >Click to toggle popover</a>\n");
+  hashTypes = {};
+  options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers.linkTo),stack1 ? stack1.call(depth0, "ajuste", options) : helperMissing.call(depth0, "linkTo", "ajuste", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("</li>\n</ul>");
   return buffer;
   
 });

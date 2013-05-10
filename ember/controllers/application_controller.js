@@ -20,6 +20,9 @@ var ApplicationController = Ember.Controller.extend({
 
         ga('set', 'page', page);
         ga('send', 'pageview');
+
+        jQuery('[data-toggle=tooltip]').tooltip()
+        jQuery('a[data-toggle=popover]').popover({trigger:'hover'})
       }
     });
   }.observes('currentPath')
