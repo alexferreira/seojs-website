@@ -89,15 +89,15 @@ app.delete('/todos/:id', function (req, res) {
 
 app.get('/sitemap.xml', function (req, res) {
     sightmap([
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/'},
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajuste'},
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/browser_e_buscadores_o_que_veem'},
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/google_e_bing'},
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/o_que_e'},
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/o_que_e'},
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/como_funciona'},
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/beneficios'},
-        {loc: 'http://ajax-seo.alexferreira.eti.br/#!/ajax/maleficios'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/ajuste'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/browser_e_buscadores_o_que_veem'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/google_e_bing'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/ajax/o_que_e'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/ajax/o_que_e'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/ajax/como_funciona'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/ajax/beneficios'},
+        {loc: 'http://seojs.alexferreira.eti.br/#!/ajax/maleficios'},
     ]);
     
     res.setHeader('Content-Type', 'text/xml');
