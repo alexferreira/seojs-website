@@ -40,7 +40,7 @@ app.configure('production', function () {
 
 // index
 app.get('/', function(req, res){
-  res.render('index', { title: 'SeoJs: Demo' })
+  res.render('index', { title: 'SeoJs' })
 });
 
 app.get('/todos', function (req, res) {
