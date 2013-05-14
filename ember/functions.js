@@ -16,3 +16,12 @@ jQuery(document).ready(function($) {
     });
   }
 });
+
+activeMenu = function(){
+  hash = location.hash ? location.hash : "#!/"
+  jQuery('li[class=active]').removeClass('active')
+  jQuery('a[href="'+hash+'"]').parent().addClass('active')
+
+  sidebadFirstHref = jQuery('.sidebar-nav ul.nav:first > li > a:first').attr('href')
+  jQuery('.nav-collapse .nav > li > a[href="'+sidebadFirstHref+'"]').parent().addClass('active')
+}
